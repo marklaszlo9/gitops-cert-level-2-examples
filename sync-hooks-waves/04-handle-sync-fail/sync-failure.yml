@@ -14,4 +14,9 @@ spec:
         command:
           - "false"
       restartPolicy: Never
-  backoffLimit: 2    
+  backoffLimit: 2
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
